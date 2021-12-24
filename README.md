@@ -148,11 +148,6 @@ QUEUE_CONNECTION=redis
 REDIS_CLIENT=predis
 ```
 
-修改/config/queue.php的'driver' => 'sync',
-```
-'driver' => 'redis',
-```
-
 接下來我必須安裝 Socket.io 客戶端和 Laravel-Echo 包，你可以通過以下方法安裝
 ```
 sudo npm install --save socket.io-client
