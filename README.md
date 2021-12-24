@@ -1,5 +1,7 @@
 # 建構基於Laravel-echo-server的Websocket
 
+## 安裝Laravel-echo-server
+
 安裝參考<a href="https://learnku.com/laravel/t/13101/using-laravel-echo-server-to-build-real-time-applications">這裡</a>
 
 使用NPM安裝laravel-echo-server
@@ -123,3 +125,36 @@ version 1.6.2
     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1157:16)
 ```
 
+## 配置 Laravel 使 Laravel Echo Server 正常工作
+
+於/config/app.php 備註 App\Providers\BroadcastServiceProvider::class 這行
+```
+//App\Providers\BroadcastServiceProvider::class,
+```
+於/config/app.php 取消備註 // 'Redis' => Illuminate\Support\Facades\Redis::class,
+```
+'Redis' => Illuminate\Support\Facades\Redis::class,
+```
+
+修改 .env 的 BROADCAST_DRIVER 和 QUEUE_CONNECTION
+```
+BROADCAST_DRIVER=redis
+```
+```
+QUEUE_CONNECTION=redis
+```
+.env 新增一行
+```
+REDIS_CLIENT=predis
+```
+
+修改/config/queue.php的'driver' => 'sync',
+```
+'driver' => 'redis',
+```
+
+接下來我必須安裝 Socket.io 客戶端和 Laravel-Echo 包，你可以通過以下方法安裝
+```
+sudo npm install --save socket.io-client
+sudo npm install --save laravel-echo
+```
