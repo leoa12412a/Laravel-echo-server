@@ -148,9 +148,10 @@ REDIS_HOST=127.0.0.1
 REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
-.env 新增一行
+.env 新增以下配置
 ```
 REDIS_CLIENT=predis
+QUEUE_DRIVER=redis
 ```
 
 接下來我必須安裝 Socket.io 客戶端和 Laravel-Echo 包，你可以通過以下方法安裝
