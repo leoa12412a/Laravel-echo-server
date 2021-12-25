@@ -136,12 +136,17 @@ version 1.6.2
 'Redis' => Illuminate\Support\Facades\Redis::class,
 ```
 
-修改 .env 的 BROADCAST_DRIVER 和 QUEUE_CONNECTION
+修改 .env 的 關於redis的配置
 ```
 BROADCAST_DRIVER=redis
 ```
 ```
 QUEUE_CONNECTION=redis
+```
+```
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
 ```
 .env 新增一行
 ```
