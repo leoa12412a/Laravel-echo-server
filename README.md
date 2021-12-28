@@ -2,6 +2,13 @@
 
 ## 安裝Laravel-echo-server
 
+以下如果遇到composer需要SSL的問題，測試環境可使用（但會使您的設置不安全）
+```
+composer config --global disable-tls true
+composer config --global secure-http false
+composer config --global repo.packagist composer http://packagist.org
+```
+
 安裝參考<a href="https://learnku.com/laravel/t/13101/using-laravel-echo-server-to-build-real-time-applications">這裡</a>
 
 使用NPM安裝laravel-echo-server
